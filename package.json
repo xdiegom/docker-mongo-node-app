@@ -1,0 +1,13 @@
+{
+  "name": "mongoapp",
+  "version": "1.0.0",
+  "description": "mongoapp-learning-docker",
+  "main": "index.js",
+  "author": "Diego Melgar",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.7.5"
+  },
+  "type": "module"
+}
