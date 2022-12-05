@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  chanchito:
+    container_name: chanchito
+    image: chanchito-img:latest
+    build: .
+    ports:
+      - "3000:3000"
+    # instead of "links" because is deprecated
+    depends_on:
+      - monguito
+  monguito:
+    container_name: monguito
+    image: mongo
+    ports:
+      - "27017:27017"
+    env_file:
+      - ./.env
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD}
