@@ -19,3 +19,15 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_USERNAME}
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD}
+    # volumnes whe add the path of the container where the database stores data
+    # there three types of volumes:
+    #   1. anonymous volumes
+    #   2. host
+    #   3. named volume
+    volumes:
+      - mongo-data:/data/db
+      # mysql -> /var/lib/mysql
+      # postgress -> /var/lib/postgresql/data
+
+volumes:
+  mongo-data:
