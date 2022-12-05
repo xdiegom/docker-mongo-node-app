@@ -2,7 +2,7 @@
 
 This repo contains instructions to build and create two containers that will comunicate between each other. From [Nicolás Schürmann Tutorial](https://www.youtube.com/watch?v=4Dko5W96WHg)
 
-ℹ️ If you don't want to do the first and second steps manually, you can jump to the easiest step [here](#easy-step-⚡️---docker-composeyml)
+ℹ️ If you don't want to do the first and second steps manually, you can jump to the easiest step [here](#easy-step-%EF%B8%8F---docker-composeyml)
 ## First container - MongoDB 📦
 
 ⚠️ You must have installed Docker Desktop or Docker in your local machine. 
