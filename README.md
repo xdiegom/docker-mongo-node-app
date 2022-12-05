@@ -2,6 +2,7 @@
 
 This repo contains instructions to build and create two containers that will comunicate between each other. From [Nicolás Schürmann Tutorial](https://www.youtube.com/watch?v=4Dko5W96WHg)
 
+ℹ️ If you don't want to do the first and second steps manually, you can jump to the easiest step [here](#easy-step-⚡️---docker-composeyml)
 ## First container - MongoDB 📦
 
 ⚠️ You must have installed Docker Desktop or Docker in your local machine. 
@@ -59,6 +60,13 @@ docker create --name chanchito --network my_network -p3000:3000 chanchito-img:la
 5. Start the container
 ```bash
 docker start chanchito
+```
+
+## Easy step ⚡️ - docker-compose.yml
+
+1. Read the `docker-compose.yml` file inside the repository and then you can run:
+```bash
+docker compose up -d --build
 ```
 
 To verify if the two containers are up and running, run:
