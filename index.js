@@ -4,7 +4,7 @@ import express from "express";
 const app = express();
 
 app.get("/", async (_req, res) => {
-  console.log("listando...");
+  console.log("listando... chanchitos");
   const animales = await Animal.find();
   return res.send(animales);
 });

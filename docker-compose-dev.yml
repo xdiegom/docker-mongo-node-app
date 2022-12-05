@@ -1,0 +1,38 @@
+version: "3.9"
+services:
+  chanchito:
+    container_name: chanchito
+    image: chanchito-img:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    # instead of "links" because is deprecated
+    depends_on:
+      - monguito
+    # this is a anonymous volume
+    volumes:
+      - .:/home/app
+  monguito:
+    container_name: monguito
+    image: mongo
+    ports:
+      - "27017:27017"
+    env_file:
+      - ./.env
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD}
+    # volumnes whe add the path of the container where the database stores data
+    # there three types of volumes:
+    #   1. anonymous volumes
+    #   2. host
+    #   3. named volume
+    volumes:
+      - mongo-data:/data/db
+      # mysql -> /var/lib/mysql
+      # postgress -> /var/lib/postgresql/data
+
+volumes:
+  mongo-data:
